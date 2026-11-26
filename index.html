@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Damara Day Spa | The Westin Harbour Castle, Downtown Toronto</title>
+  <meta name="description" content="Experience luxury at Damara Day Spa, Downtown Toronto. Indulge in exclusive spa packages, rejuvenating facials, and soothing massages. Book now!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Scroll Progress Hairline -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Centered Luxury Editorial Header (Hides on scroll down, reveals on scroll up) -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-top-note">
+      <span>THE WESTIN HARBOUR CASTLE &middot; DOWNTOWN TORONTO</span>
+      <span>COMPLIMENTARY POOL, SAUNA &amp; HOT TUB ACCESS</span>
+      <a href="tel:4164548951">(416) 454-8951</a>
+    </div>
+    <div class="header-main">
+      <nav class="nav-group nav-left" aria-label="Left Navigation">
+        <a href="#lookbook">Experiences</a>
+        <a href="#atelier-menu">Service Menu</a>
+        <a href="#headspa">Head Spa</a>
+      </nav>
+
+      <a href="#" class="brand-center" aria-label="Damara Day Spa Home">
+        <img src="logo.webp" alt="Damara Day Spa" class="brand-logo" />
+      </a>
+
+      <nav class="nav-group nav-right" aria-label="Right Navigation">
+        <a href="#collections">Collections</a>
+        <a href="#story">About Us</a>
+        <a href="https://go.booker.com/location/WestinHarbour/buy/gift-certificate" target="_blank" rel="noopener">Gift Cards</a>
+        <button class="nav-book-trigger open-booking-btn" data-service="Damara Day Spa Reservation">Reserve</button>
+      </nav>
+
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+    <div class="drawer-links">
+      <a href="#lookbook" class="drawer-link">Experiences</a>
+      <a href="#atelier-menu" class="drawer-link">Service Menu</a>
+      <a href="#headspa" class="drawer-link">Head Spa</a>
+      <a href="#collections" class="drawer-link">Collections</a>
+      <a href="#story" class="drawer-link">About Us</a>
+      <a href="https://go.booker.com/location/WestinHarbour/buy/gift-certificate" target="_blank" rel="noopener" class="drawer-link gold">Buy Gift Certificates</a>
+    </div>
+    <div class="drawer-footer">
+      <a href="tel:4164548951" class="btn-editorial light full">Call (416) 454-8951</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- 01. MONUMENTAL FULL-BLEED HERO (Text-free background photo) -->
+    <section class="hero-monument">
+      <div class="hero-media" style="background-image: url('images/hero-sanctuary.jpg');"></div>
+      <div class="hero-vignette"></div>
+      <div class="hero-inner">
+        <div class="hero-bottom-grid">
+          <div class="hero-headline-col">
+            <span class="eyebrow-line gold reveal">WATERFRONT SANCTUARY &middot; CANADA</span>
+            <h1 class="hero-display reveal">
+              Stillness, <em>Radiance</em><br />
+              &amp; Harbourfront Luxury
+            </h1>
+          </div>
+          <div class="hero-aside-col reveal">
+            <p>
+              Damara Day Spa &amp; Medical Aesthetics at The Westin Harbour Castle, Downtown Toronto. Over 19 Damara locations across Canada—featuring complimentary hotel sauna, indoor pool, and hot tub access.
+            </p>
+            <div class="hero-actions">
+              <button class="btn-editorial gold open-booking-btn" data-service="Signature Spa Escape">Book Your Escape</button>
+              <a href="#atelier-menu" class="link-underline light">Explore Service Menu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue">
+        <span>SCROLL</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- 02. EDITORIAL TICKER -->
+    <div class="ticker-bar" aria-hidden="true">
+      <div class="ticker-track">
+        <span>GUINOT HYDRADERMIE</span><span class="sep">/</span>
+        <span>SKINCEUTICALS CLINICAL</span><span class="sep">/</span>
+        <span>RMT MASSAGE THERAPY</span><span class="sep">/</span>
+        <span>JAPANESE HEAD SPA</span><span class="sep">/</span>
+        <span>COUPLES SANCTUARY</span><span class="sep">/</span>
+        <span>WESTIN HARBOUR CASTLE AMENITIES</span><span class="sep">/</span>
+        <span>GUINOT HYDRADERMIE</span><span class="sep">/</span>
+        <span>SKINCEUTICALS CLINICAL</span><span class="sep">/</span>
+        <span>RMT MASSAGE THERAPY</span><span class="sep">/</span>
+        <span>JAPANESE HEAD SPA</span><span class="sep">/</span>
+        <span>COUPLES SANCTUARY</span><span class="sep">/</span>
+        <span>WESTIN HARBOUR CASTLE AMENITIES</span><span class="sep">/</span>
+      </div>
+    </div>
+
+    <!-- 03. SPLIT FEATURE: GIFT CERTIFICATE OFFER (Image sits cleanly beside text, no overlap) -->
+    <section class="split-feature plum-theme">
+      <div class="split-media">
+        <img src="images/orig/bf-gift-card.png" alt="Buy a $200 Damara Day Spa Gift Card, Get an Extra $50 Free" />
+      </div>
+      <div class="split-copy reveal">
+        <span class="eyebrow-line gold">BLACK FRIDAY SPECIAL &middot; GIFT CERTIFICATES</span>
+        <h2>Buy a $200 Gift Card,<br />Receive <em>$50 Free</em></h2>
+        <p>
+          Purchase a $200 Damara Day Spa Gift Card and receive an EXTRA $50 Gift Card FREE—enjoying <strong>$250 in total spa value</strong>. Includes complimentary access to The Westin Harbour Castle&rsquo;s sauna, pool, and hot tub in downtown Toronto.
+        </p>
+        <div class="split-actions">
+          <a href="https://go.booker.com/location/WestinHarbour/buy/gift-certificate" target="_blank" rel="noopener" class="btn-editorial gold">
+            Purchase $200 Gift Card
+          </a>
+          <a href="https://westintodamaraspa.com/gift-certificates-ke8z/" target="_blank" rel="noopener" class="link-underline light">
+            Gift Certificate Details
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. ASYMMETRIC EDITORIAL LOOKBOOK (Clean text-free photography) -->
+    <section class="lookbook-section" id="lookbook">
+      <div class="container-wide">
+        <div class="editorial-intro reveal">
+          <span class="eyebrow-line">BOOK YOUR TOP SPA PICKS NOW</span>
+          <h2>Pillars of <em>Restoration</em></h2>
+        </div>
+
+        <div class="asymmetric-grid">
+          <article class="look-item tall reveal">
+            <div class="look-img-wrap">
+              <img src="images/massage-couples.jpg" alt="RMT and Couples Massage Downtown Toronto" />
+            </div>
+            <div class="look-meta">
+              <span class="roman">I.</span>
+              <div>
+                <h3>RMT &amp; Couples Massage</h3>
+                <p>Registered Massage Therapy, Couples Relaxation ($155 pp), Deep Tissue, Hot Stone &amp; Aromatherapy.</p>
+                <a href="#atelier-menu" class="link-underline dark" data-tab-jump="massage">View Massage Menu</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="look-item offset reveal">
+            <div class="look-img-wrap">
+              <img src="images/facial-aesthetics.jpg" alt="Guinot and SkinCeuticals Facials Toronto" />
+            </div>
+            <div class="look-meta">
+              <span class="roman">II.</span>
+              <div>
+                <h3>Clinical &amp; Luxury Facials</h3>
+                <p>Guinot Hydradermie, SkinCeuticals Mixology, ESSE Probiotic, G.M. Collin, Geneo X &amp; Microchanneling.</p>
+                <a href="#atelier-menu" class="link-underline dark" data-tab-jump="facials">View Facial Menu</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="look-item wide reveal">
+            <div class="look-img-wrap">
+              <img src="images/hero-sanctuary.jpg" alt="Luxury Head Spa and Westin Harbour Castle Escape" />
+            </div>
+            <div class="look-meta">
+              <span class="roman">III.</span>
+              <div>
+                <h3>Head Spa &amp; Seasonal Body Rituals</h3>
+                <p>Toronto&rsquo;s lakeside Head Spa ($225–$399), Procell Hair Restoration ($450), Chocolate Peppermint ($215) &amp; Cranberry Orange ($159) rituals.</p>
+                <a href="#headspa" class="link-underline dark">Discover Head Spa</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. INTERACTIVE ATELIER SERVICE MENU (Sticky Clean Photo Left + Editorial List Right) -->
+    <section class="atelier-menu-section" id="atelier-menu">
+      <div class="container-wide">
+        <div class="atelier-header reveal">
+          <div>
+            <span class="eyebrow-line gold">AUTHENTIC SERVICE INDEX</span>
+            <h2>The Treatment <em>Atelier</em></h2>
+          </div>
+          <div class="atelier-tabs" role="tablist" aria-label="Treatment Categories">
+            <button class="at-tab active" data-tab="facials">Facials &amp; Aesthetics</button>
+            <button class="at-tab" data-tab="massage">Massage</button>
+            <button class="at-tab" data-tab="headspa">Head Spa &amp; Body</button>
+            <button class="at-tab" data-tab="nails">Hands, Feet &amp; Men&rsquo;s</button>
+            <button class="at-tab" data-tab="packages">Packages</button>
+          </div>
+        </div>
+
+        <div class="atelier-split">
+          <div class="atelier-sticky-col">
+            <div class="atelier-preview-frame">
+              <img id="atelierPreviewImg" src="images/facial-aesthetics.jpg" alt="Selected Treatment Preview" />
+              <div class="atelier-preview-caption">
+                <span id="atelierPreviewCat">GUINOT &middot; SKINCEUTICALS</span>
+                <h4 id="atelierPreviewTitle">Guinot Hydradermie Lift Facial</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="atelier-list-col" id="atelierList">
+            <!-- Populated dynamically by script.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. FULL-BLEED PANORAMIC WESTIN AMENITIES BANNER -->
+    <section class="panoramic-banner" id="amenities">
+      <div class="pano-bg" style="background-image: url('images/hero-sanctuary.jpg');"></div>
+      <div class="pano-scrim"></div>
+      <div class="container-wide pano-content reveal">
+        <span class="eyebrow-line gold">THE WESTIN HARBOUR CASTLE</span>
+        <h2>Complimentary Hotel <em>Amenities</em></h2>
+        <p>
+          Every spa visit and gift package includes full access to The Westin Harbour Castle&rsquo;s waterfront wellness sanctuary—sauna, indoor pool, hot tub, and relaxation lounge.
+        </p>
+        <div class="pano-stats">
+          <div><span>01</span> Indoor Heated Pool</div>
+          <div><span>02</span> Cedar Dry Sauna</div>
+          <div><span>03</span> Whirlpool &amp; Hot Tub</div>
+          <div><span>04</span> Downtown Harbourfront</div>
+        </div>
+        <button class="btn-editorial gold open-booking-btn" data-service="Spa Day with Westin Amenities">
+          Reserve Your Spa Day
+        </button>
+      </div>
+    </section>
+
+    <!-- 07. DUAL EDGE-TO-EDGE SEASONAL RITUAL BANNERS (Text-free backgrounds so HTML text never clashes!) -->
+    <section class="dual-edge-banners">
+      <div class="edge-panel terracotta reveal">
+        <div class="edge-bg" style="background-image: url('images/massage-couples.jpg');"></div>
+        <div class="edge-scrim terracotta"></div>
+        <div class="edge-content">
+          <span class="eyebrow-line gold">80 MINS &middot; $215.00 CAD</span>
+          <h3>Chocolate Peppermint Body Ritual</h3>
+          <p>Indulge in the ultimate Chocolate Peppermint Spa Experience exclusively at Damara Day Spa, The Westin Harbour Castle.</p>
+          <a href="https://westintodamaraspa.com/chocolate-peppermint-body-ritual-80-mins/" target="_blank" rel="noopener" class="btn-editorial light">View Package</a>
+        </div>
+      </div>
+
+      <div class="edge-panel plum reveal">
+        <div class="edge-bg" style="background-image: url('images/facial-aesthetics.jpg');"></div>
+        <div class="edge-scrim plum"></div>
+        <div class="edge-content">
+          <span class="eyebrow-line gold">70 MINS &middot; $159.00 CAD</span>
+          <h3>Cranberry Orange Head-to-Toe</h3>
+          <p>Indulge in a vibrant seasonal Head-to-Toe Spa Escape exclusively at Damara Day Spa, The Westin Harbour Castle.</p>
+          <a href="https://westintodamaraspa.com/cranberry-orange-head-to-toe-70-mins/" target="_blank" rel="noopener" class="btn-editorial light">View Package</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08. HEAD SPA 6-STEP EDITORIAL SPREAD -->
+    <section class="headspa-spread" id="headspa">
+      <div class="container-wide spread-grid">
+        <div class="spread-copy reveal">
+          <span class="eyebrow-line">TORONTO&rsquo;S PREMIERE HEAD SPA</span>
+          <h2>Lakeside Scalp &amp; Hair <em>Wellness</em></h2>
+          <p>
+            Located inside The Westin Harbour Castle, our signature Head Spa blends microscopic scalp analysis, warm steam therapy, botanical masks, and tension-melting massage.
+          </p>
+          <div class="spread-pricing">
+            <div><strong>Luxury Head &amp; Scalp (60m)</strong><span>$225.00 CAD</span></div>
+            <div><strong>Luxury Head &amp; Scalp (90m)</strong><span>$299.00 CAD</span></div>
+            <div><strong>Couples Hair &amp; Scalp (60m)</strong><span>$399.00 CAD</span></div>
+            <div><strong>Procell Hair Restoration (45m)</strong><span>$450.00 CAD</span></div>
+          </div>
+          <div class="spread-actions">
+            <a href="https://westintodamaraspa.com/head-spa/" target="_blank" rel="noopener" class="btn-editorial dark">Explore Head Spa</a>
+            <button class="link-underline dark open-booking-btn" data-service="Luxury Head and Scalp Ritual (60m - $225)">Book Ritual</button>
+          </div>
+        </div>
+        <div class="spread-steps reveal">
+          <div class="step-row"><span>01</span><div><strong>Consultation &amp; Scalp Analysis</strong><p>One-on-one assessment of scalp health, hydration, and hair history.</p></div></div>
+          <div class="step-row"><span>02</span><div><strong>Deep Cleansing Scalp Shampoo</strong><p>Purifying cleanse removes buildup and prepares the scalp.</p></div></div>
+          <div class="step-row"><span>03</span><div><strong>Scalp Massage &amp; Steam Therapy</strong><p>Warm steam opens pores and boosts oxygen flow.</p></div></div>
+          <div class="step-row"><span>04</span><div><strong>Botanical Hair Mask + Heat</strong><p>Rosemary, peppermint, or lavender mask activated with gentle heat.</p></div></div>
+          <div class="step-row"><span>05</span><div><strong>Rinse, Condition &amp; Soft Styling</strong><p>Leaves hair visibly softer, smoother, and refreshed.</p></div></div>
+          <div class="step-row"><span>06</span><div><strong>Personalized After-Care Plan</strong><p>Tailored home-care product recommendations from our specialists.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09. ORIGINAL PROMO BANNERS SHOWCASE (Displayed clean with NO overlapping HTML text!) -->
+    <section class="collections-filmstrip" id="collections">
+      <div class="container-wide">
+        <div class="filmstrip-header reveal">
+          <span class="eyebrow-line gold">ORIGINAL COLLECTIONS</span>
+          <h2>Explore Every <em>Occasion</em></h2>
+        </div>
+        <div class="filmstrip-grid">
+          <a href="https://westintodamaraspa.com/westin-harbour-castle/" target="_blank" rel="noopener" class="film-card reveal">
+            <img src="images/hero-sanctuary.jpg" alt="Damara Westin Harbour Castle" />
+            <span>WESTIN HARBOUR CASTLE</span>
+          </a>
+          <a href="https://westintodamaraspa.com/rmt-massage-treatment/" target="_blank" rel="noopener" class="film-card reveal">
+            <img src="images/massage-couples.jpg" alt="RMT Massage Treatment" />
+            <span>RMT MASSAGE</span>
+          </a>
+          <a href="https://westintodamaraspa.com/couples-spa-day/" target="_blank" rel="noopener" class="film-card reveal">
+            <img src="https://cdn11.bigcommerce.com/s-wgboxqzs9q/images/stencil/600x600/products/692/1242/couple-massage-toronto__64577.1743532139.1280.1280__38040.1774279997.jpg?c=1" alt="Couples Spa Day" />
+            <span>COUPLES SPA DAY</span>
+          </a>
+          <a href="https://westintodamaraspa.com/spa-facials-downtown-toronto/" target="_blank" rel="noopener" class="film-card reveal">
+            <img src="images/facial-aesthetics.jpg" alt="Advanced Facials" />
+            <span>ADVANCED FACIALS</span>
+          </a>
+        </div>
+        <div class="occasions-inline reveal">
+          <a href="https://westintodamaraspa.com/birthday/" target="_blank" rel="noopener">Birthday</a>
+          <a href="https://westintodamaraspa.com/wedding/" target="_blank" rel="noopener">Wedding</a>
+          <a href="https://westintodamaraspa.com/graduation/" target="_blank" rel="noopener">Graduation</a>
+          <a href="https://westintodamaraspa.com/mens-spa-day/" target="_blank" rel="noopener">Men&rsquo;s Spa Day</a>
+          <a href="https://westintodamaraspa.com/sports/" target="_blank" rel="noopener">Sports</a>
+          <a href="https://westintodamaraspa.com/corporate-packages-events/" target="_blank" rel="noopener">Corporate Events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. OUR STORY EDITORIAL SPLIT (Clean text-free photography) -->
+    <section class="story-editorial" id="story">
+      <div class="container-wide story-split">
+        <div class="story-media reveal">
+          <img src="images/facial-aesthetics.jpg" alt="Damara Day Spa Toronto Heritage" />
+        </div>
+        <div class="story-copy reveal">
+          <span class="eyebrow-line">OUR HERITAGE &middot; 19+ LOCATIONS ACROSS CANADA</span>
+          <h2>Founded by <em>Rae, Kayla Dias &amp; Lauren Sharpe</em></h2>
+          <p>
+            Welcome to <strong>Damara Westin Harbour Castle</strong>, our second Toronto location alongside our flagship Yorkville spa (<strong>66 Avenue Rd, Toronto, ON M5R 3N8</strong>) and <strong>DamaraBeauty.com</strong>.
+          </p>
+          <p>
+            With over two decades of experience in the spa industry, our founders curate only the highest-performing luxury brands we personally trust and adore—including <strong>SkinCeuticals, Guinot, G.M. Collin, ESSE, Geneo X, and Footlogix</strong>.
+          </p>
+          <div class="story-signoff">
+            <a href="https://westintodamaraspa.com/about-us/" target="_blank" rel="noopener" class="link-underline dark">Read Full Story</a>
+            <a href="tel:4164548951" class="link-underline dark">Call (416) 454-8951</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Minimal Luxury Footer (Logo clearly visible on transparent dark background) -->
+  <footer class="site-footer">
+    <div class="container-wide footer-top">
+      <div class="footer-brand">
+        <img src="logo.webp" alt="Damara Day Spa" class="footer-logo" />
+        <p>Damara Day Spa &amp; Medical Aesthetics &middot; The Westin Harbour Castle, Downtown Toronto, Canada.</p>
+      </div>
+      <div class="footer-links-col">
+        <h5>Navigation</h5>
+        <a href="https://westintodamaraspa.com/all-services-1/" target="_blank" rel="noopener">All Services</a>
+        <a href="https://westintodamaraspa.com/head-spa/" target="_blank" rel="noopener">Head Spa</a>
+        <a href="https://westintodamaraspa.com/injectablesdamaraspawestin/" target="_blank" rel="noopener">Injectables</a>
+        <a href="https://westintodamaraspa.com/gift-certificates-ke8z/" target="_blank" rel="noopener">Gift Certificates</a>
+      </div>
+      <div class="footer-links-col">
+        <h5>Contact &amp; Social</h5>
+        <a href="tel:4164548951">(416) 454-8951</a>
+        <span>66 Avenue Rd, Toronto, ON M5R 3N8</span>
+        <a href="https://www.instagram.com/damara_beauty/" target="_blank" rel="noopener">Instagram @damara_beauty</a>
+        <a href="https://youtube.com/@damaraspatoronto?si=YT29gLYIgWfjeHVK" target="_blank" rel="noopener">YouTube</a>
+      </div>
+      <div class="footer-newsletter">
+        <h5>Subscribe To Our Newsletter</h5>
+        <form id="newsletterForm">
+          <input type="email" placeholder="Email Address" required aria-label="Email Address" />
+          <button type="submit">Join</button>
+        </form>
+        <p class="newsletter-msg" id="newsletterMsg"></p>
+      </div>
+    </div>
+    <div class="container-wide footer-bottom">
+      <span>&copy; 2026 Damara Beauty. All rights reserved.</span>
+      <span>Downtown Toronto &middot; Ontario, Canada</span>
+    </div>
+  </footer>
+
+  <!-- Reservation Modal -->
+  <div class="modal-backdrop" id="bookingModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <span class="eyebrow-line">DAMARA DAY SPA &middot; WESTIN HARBOUR CASTLE</span>
+      <h3 id="modalTitle">Request Your Appointment</h3>
+      <p class="modal-sub">Complimentary Westin sauna, pool &amp; hot tub access included. Or call <a href="tel:4164548951"><strong>(416) 454-8951</strong></a>.</p>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="selectedServiceInput">Selected Treatment</label>
+          <input type="text" id="selectedServiceInput" readonly />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="guestName">Full Name</label>
+            <input type="text" id="guestName" placeholder="Full Name" required />
+          </div>
+          <div class="form-group">
+            <label for="guestPhone">Phone Number</label>
+            <input type="tel" id="guestPhone" placeholder="(416) ___-____" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="preferredDate">Preferred Date</label>
+            <input type="date" id="preferredDate" required />
+          </div>
+          <div class="form-group">
+            <label for="preferredTime">Preferred Time</label>
+            <select id="preferredTime">
+              <option>Morning</option>
+              <option>Afternoon</option>
+              <option>Evening</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-editorial dark full">Submit Request</button>
+      </form>
+      <div class="booking-success" id="bookingSuccess" hidden>
+        <h4>Request Received</h4>
+        <p>Thank you. Our Westin Harbour Castle concierge will confirm shortly, or call <strong>(416) 454-8951</strong>.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
