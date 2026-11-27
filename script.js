@@ -385,6 +385,35 @@ document.addEventListener("DOMContentLoaded", () => {
     newsletterForm.reset();
   });
 
+  // Interactive 3D Tilt + Specular Shine + Jiggle on Luxury Gift Card
+  const giftCardLuxe = document.getElementById("giftCardLuxe");
+  const luxCardShine = document.getElementById("luxCardShine");
+
+  if (giftCardLuxe) {
+    giftCardLuxe.addEventListener("mousemove", (e) => {
+      const rect = giftCardLuxe.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rx = ((y - rect.height / 2) / (rect.height / 2)) * -7;
+      const ry = ((x - rect.width / 2) / (rect.width / 2)) * 7;
+      giftCardLuxe.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
+      if (luxCardShine) {
+        luxCardShine.style.setProperty("--mx", `${(x / rect.width) * 100}%`);
+        luxCardShine.style.setProperty("--my", `${(y / rect.height) * 100}%`);
+      }
+    });
+
+    giftCardLuxe.addEventListener("mouseleave", () => {
+      giftCardLuxe.style.transform = "rotateX(0deg) rotateY(0deg)";
+    });
+
+    giftCardLuxe.addEventListener("click", () => {
+      giftCardLuxe.classList.remove("is-jiggling");
+      void giftCardLuxe.offsetWidth;
+      giftCardLuxe.classList.add("is-jiggling");
+    });
+  }
+
   // Smooth Staggered Scroll Reveal Observer
   const revealObserver = new IntersectionObserver(
     (entries) => {

@@ -449,12 +449,13 @@ a {
   color: var(--gold);
 }
 
-/* 03. SPLIT FEATURE: GIFT CARD */
+/* 03. SPLIT FEATURE: PHOTOGRAPHY-LED GIFT SHOWCASE */
 .split-feature {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 500px;
+  grid-template-columns: 1.05fr 0.95fr;
+  min-height: 740px;
   overflow: hidden;
+  background: var(--plum);
 }
 
 .split-feature > * {
@@ -462,27 +463,309 @@ a {
 }
 
 .split-feature.plum-theme {
-  background: var(--plum);
+  background: linear-gradient(125deg, #2d0b17 0%, var(--plum) 55%, #3a101f 100%);
   color: var(--white);
 }
 
 .split-media {
+  position: relative;
   overflow: hidden;
-  background: #2f0e1a;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: clamp(48px, 6vw, 84px) clamp(24px, 4vw, 56px);
+  min-height: 540px;
 }
 
-.split-media img {
+.split-media-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.78;
+  transform: scale(1.03);
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.split-feature:hover .split-media-bg {
+  transform: scale(1.07);
+}
+
+.split-media-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(6, 33, 30, 0.42) 0%,
+    rgba(45, 11, 23, 0.56) 72%,
+    #360e1c 100%
+  );
+}
+
+.gift-showcase-col {
+  position: relative;
+  z-index: 2;
+  width: min(440px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Interactive 3D-Tilt Luxury Gift Card with Folded Corner Ribbon */
+.gift-card-3d-wrap {
+  width: 100%;
+  perspective: 1100px;
+}
+
+.gift-card-luxe {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #0e443e 0%, #06211e 58%, #031412 100%);
+  border: 1px solid rgba(230, 188, 115, 0.72);
+  border-radius: 16px;
+  padding: 28px 30px 26px;
+  color: var(--white);
+  box-shadow:
+    0 32px 68px rgba(0, 0, 0, 0.56),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 0 36px rgba(230, 188, 115, 0.08);
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out, box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+}
+
+.gift-card-luxe:hover {
+  border-color: var(--gold-soft);
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.65),
+    0 0 32px rgba(230, 188, 115, 0.2);
+}
+
+/* Folded Corner Ribbon Sash (Wraps over top-right corner with realistic back fold) */
+.corner-ribbon-wrap {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 138px;
+  height: 138px;
+  overflow: hidden;
+  z-index: 6;
+  pointer-events: auto;
+}
+
+.corner-ribbon-wrap::before,
+.corner-ribbon-wrap::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border: 4px solid #754c11;
+}
+
+.corner-ribbon-wrap::before {
+  top: 0;
+  left: 18px;
+}
+
+.corner-ribbon-wrap::after {
+  bottom: 18px;
+  right: 0;
+}
+
+.corner-ribbon {
+  position: absolute;
+  top: 26px;
+  right: -34px;
+  width: 176px;
+  padding: 7px 0;
+  background: linear-gradient(135deg, #fff1cc 0%, #e6bc73 45%, #b8822e 100%);
+  color: var(--emerald-deep);
+  text-align: center;
+  transform: rotate(45deg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(117, 76, 17, 0.5);
+}
+
+.corner-ribbon span {
+  display: block;
+  font-size: 0.48rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.1;
+}
+
+.corner-ribbon strong {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  line-height: 1.15;
+}
+
+@keyframes cardJiggle {
+  0% { transform: rotate(0deg) scale(1); }
+  20% { transform: rotate(-2.5deg) scale(1.02); }
+  45% { transform: rotate(2.5deg) scale(1.02); }
+  70% { transform: rotate(-1.2deg) scale(1.01); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.gift-card-luxe.is-jiggling {
+  animation: cardJiggle 0.55s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+.lux-card-shine {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(245, 222, 179, 0.2) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.gift-card-luxe:hover .lux-card-shine {
+  opacity: 1;
+}
+
+.gc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.gc-logo {
+  height: 36px;
+  width: auto;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+}
+
+.gc-pass-tag {
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--gold-soft);
+}
+
+.gc-value-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.gc-main-price small {
+  display: block;
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-soft);
+  margin-bottom: 4px;
+}
+
+.gc-main-price strong {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.8vw, 2.9rem);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--white);
+}
+
+.gc-main-price strong span {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+}
+
+.gc-bonus-pill {
+  background: linear-gradient(135deg, var(--gold), #c28a3d);
+  color: var(--emerald-deep);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 8px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.gc-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(230, 188, 115, 0.28);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* 3 Circular Spa Experience Medallions */
+.gift-circles-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.gift-circle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.gift-circle-img {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid rgba(230, 188, 115, 0.75);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.gift-circle-item:hover .gift-circle-img {
+  transform: translateY(-4px) scale(1.06);
+  border-color: var(--gold-soft);
+}
+
+.gift-circle-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.split-feature:hover .split-media img {
-  transform: scale(1.03);
+.gift-circle-item span {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+}
+
+.gift-feature-list {
+  list-style: none;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gift-feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.gift-feature-list li span {
+  color: var(--gold);
 }
 
 .split-copy {
@@ -1457,5 +1740,28 @@ a {
     padding: 28px 20px;
     max-height: 90svh;
     overflow-y: auto;
+  }
+  .split-media {
+    min-height: auto;
+    padding: 44px 18px;
+  }
+  .gift-card-luxe {
+    padding: 22px 20px;
+  }
+  .corner-ribbon-wrap {
+    width: 112px;
+    height: 112px;
+  }
+  .corner-ribbon {
+    top: 20px;
+    right: -36px;
+    width: 148px;
+  }
+  .gc-logo {
+    height: 30px;
+  }
+  .gift-circle-img {
+    width: 76px;
+    height: 76px;
   }
 }
