@@ -414,6 +414,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Grand First-Visit Promotional Popup Ad (with 2.8s breathing time on entry)
+  const grandAdBackdrop = document.getElementById("grandAdBackdrop");
+  const grandAdClose = document.getElementById("grandAdClose");
+  const grandAdDismiss = document.getElementById("grandAdDismiss");
+  const GRAND_AD_KEY = "damara_westin_promo_shown";
+
+  function closeGrandAd() {
+    if (!grandAdBackdrop) return;
+    sessionStorage.setItem(GRAND_AD_KEY, "1");
+    grandAdBackdrop.classList.remove("open");
+    grandAdBackdrop.setAttribute("aria-hidden", "true");
+  }
+
+  if (grandAdBackdrop && !sessionStorage.getItem(GRAND_AD_KEY)) {
+    setTimeout(() => {
+      grandAdBackdrop.classList.add("open");
+      grandAdBackdrop.setAttribute("aria-hidden", "false");
+    }, 2800);
+  }
+
+  if (grandAdClose) grandAdClose.addEventListener("click", closeGrandAd);
+  if (grandAdDismiss) grandAdDismiss.addEventListener("click", closeGrandAd);
+  if (grandAdBackdrop) {
+    grandAdBackdrop.addEventListener("click", (e) => {
+      if (e.target === grandAdBackdrop) closeGrandAd();
+    });
+  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && grandAdBackdrop && grandAdBackdrop.classList.contains("open")) {
+      closeGrandAd();
+    }
+  });
+
   // Smooth Staggered Scroll Reveal Observer
   const revealObserver = new IntersectionObserver(
     (entries) => {
